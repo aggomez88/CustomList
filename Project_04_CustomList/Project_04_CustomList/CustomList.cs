@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Project_04_CustomList
 {
-    class Program
+    public class CustomList<T>
     {
-        static void Main(string[] args)
+        public void Add(T item)
         {
-            
+
         }
     }
 }
