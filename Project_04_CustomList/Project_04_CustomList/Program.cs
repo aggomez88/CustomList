@@ -10,6 +10,7 @@ namespace Project_04_CustomList
     {
         static void Main(string[] args)
         {
+            //CustomClass TEST
         }
     }
 }
