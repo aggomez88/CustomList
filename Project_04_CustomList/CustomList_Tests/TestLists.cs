@@ -72,23 +72,28 @@ namespace CustomList_Tests
             int actual;
 
             // ACT
-            actual = myList.Add[1];
+            actual = myList.Add(secondValue);
 
             // ASSERT
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, myList[1]);
         }
         [TestMethod]
-        public void Check_Indexer()
+        public void Check_AddingIntegersToList_AndZeroIndexIsStillThere()
         {
             // ARRANGE
             CustomList<int> myList = new CustomList<int>();
-            int expected = [indexer];
+            int expected = 1;
+            int actual;
 
             // ACT
-            myList[expected];
+            myList.Add(1);
+            myList.Add(2);
+            myList.Add(3);
+            myList.Add(4);
+            myList.Add(5);
 
             // ASSERT
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, myList[0]);
 
         }
         [TestMethod]
@@ -99,8 +104,10 @@ namespace CustomList_Tests
             CustomList<int> myList;
             int expected = 1;
             actual;
+
             // ACT
             myList.Add(1);
+
             // ASSERT
         }
     }
