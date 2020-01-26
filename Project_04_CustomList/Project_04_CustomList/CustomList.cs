@@ -8,59 +8,58 @@ namespace Project_04_CustomList
 {
     public class CustomList<T>
     {
-        // -------------------------------------------------------------------------------------------------VARIABLES (HAS A...)----------------------------------------------------------------------
-        T[] items;
-        int count;
-        int capacity;
-        public int count
-        {
+        // ------------------------------------------------------------------------------------VARIABLES (HAS A...)----------------------------------------------------------------------
 
-        }
+        public T[] items = new T[0];
+        int index;
 
-
-        
-
-
+        public int Count;
+        public int Capacity;
 
         public T this[int index] // indexer properties
         {
             get
             {
-                if (index < 0 && index >= capacity)
-                {
-                    return items[i]
-                }
+                return items[index];
             }
             set
             {
-
+                items[index] = value;
             }
         }
 
+        // ---------------------------------------------------------------------------------------CONSTRUCTOR-----------------------------------------------------------------------------
 
-        // ----------------------------------------------------------------------------------------------------------CONSTRUCTOR-----------------------------------------------------------------------------
         public CustomList()
         {
-            int count = 0;
-            int capacity = 4;
+            index = 0;
+            Count = 0;
+            Capacity = 4;
 
-            T[] items = new T[4];
+            items = new T[Capacity];
         }
 
-        // ----------------------------------------------------------------------------------------------------METHODS (CAN DO...)------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------METHODS (CAN DO...)----------------------------------------------------------------------
+
         public void Add(T item)
         {
-            if(count == capacity)
+            if(Count == Capacity)
             {
-                T[] temp = new T[capacity *= 2];
-                for (int i = 0; i < count; i++)
+                T[] temp = new T[Capacity *= 2];
+                for (int i = 0; i < Count; i++)
                 {
                     temp[i] = items[i];
                 }
                 items = temp;
             }
-            items[count] = item;
-            count++;
+            items[Count] = item;
+            Count++;
         }
+       
+
+        //if (index < 0 && index >= capacity)
+        //        {
+        //            return items[index];
+        //        }
     }
 }
