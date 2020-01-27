@@ -37,9 +37,10 @@ namespace CustomList_Tests
 
             // ACT
             myList.Add(value);
+            actual = myList.Count;
 
             // ASSERT
-            Assert.AreEqual(expected, myList.Count);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void Check_IncreaseCapacity_AfterAdd()
@@ -66,16 +67,24 @@ namespace CustomList_Tests
         {
             // ARRANGE
             CustomList<int> myList = new CustomList<int>();
-            int expected = 3;
-            int firstValue = 2;
-            int secondValue = 3;
+            int value1 = 2;
+            int value2 = 3;
+            int value3 = 4;
+            int value4 = 5;
+
+            int expected = 5;
             int actual;
 
             // ACT
-            actual = myList.Add(secondValue);
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+
+            actual = myList[3];
 
             // ASSERT
-            Assert.AreEqual(expected, myList[1]);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void Check_AddingIntegersToList_AndZeroIndexIsStillThere()
@@ -92,23 +101,25 @@ namespace CustomList_Tests
             myList.Add(4);
             myList.Add(5);
 
-            // ASSERT
-            Assert.AreEqual(expected, myList[0]);
-
-        }
-        [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
-        public void Check_IfListWillReturn_Null()
-        {
-            // ARRANGE
-            CustomList<int> myList;
-            int expected = 1;
-            actual;
-
-            // ACT
-            myList.Add(1);
+            actual = myList[0];
 
             // ASSERT
+            Assert.AreEqual(expected, actual);
+
         }
+        //[TestMethod]
+        //[ExpectedException(typeof(NullReferenceException))]
+        //public void Check_IfListWillReturn_Null()
+        //{
+        //    // ARRANGE
+        //    CustomList<int> myList;
+        //    int expected = 1;
+        //    actual;
+
+        //    // ACT
+        //    myList.Add(1);
+
+        //    // ASSERT
+        //}
     }
 }

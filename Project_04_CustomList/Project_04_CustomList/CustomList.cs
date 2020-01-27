@@ -13,14 +13,24 @@ namespace Project_04_CustomList
         public T[] items = new T[4];
         int index;
 
-        int Count;
-        int Capacity;
+        public int Count { get { return count; } }
+
+        private int count;
+        public int Capacity;
 
         public T this[int index] // indexer properties
         {
+            //need a conditional to prevent out of range access
+            //look back at properties slideshow
+            
             get
             {
-                return items[index];
+                if (true)
+                {
+                    //out of range IF its within range, else throw exception
+                    return items[index];
+                }
+                
             }
             set
             {
@@ -33,7 +43,7 @@ namespace Project_04_CustomList
         public CustomList()
         {
             index = 0;
-            Count = 0;
+            count = 0;
             Capacity = 4;
 
             items = new T[Capacity];
@@ -53,7 +63,25 @@ namespace Project_04_CustomList
                 items = temp;
             }
             items[Count] = item;
-            Count++;
+            count++;
+        }
+
+        public bool Remove(T item)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (item.Equals(items[i]))
+                {
+                    count--;
+                }
+                else
+                {
+                    T[] temp = new T[Count];                                            //create new T Array and set equal to new count 
+                }
+            }
+            
+
+            return true;
         }
        
 
