@@ -10,11 +10,11 @@ namespace Project_04_CustomList
     {
         // ------------------------------------------------------------------------------------VARIABLES (HAS A...)----------------------------------------------------------------------
 
-        public T[] items = new T[0];
+        public T[] items = new T[4];
         int index;
 
-        public int Count;
-        public int Capacity;
+        int Count;
+        int Capacity;
 
         public T this[int index] // indexer properties
         {
@@ -57,7 +57,7 @@ namespace Project_04_CustomList
         }
        
 
-        //if (index < 0 && index >= capacity)
+        //if (index < 0 && index >= Capacity)
         //        {
         //            return items[index];
         //        }
