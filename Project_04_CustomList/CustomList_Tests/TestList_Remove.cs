@@ -74,8 +74,8 @@ namespace CustomList_Tests
             myList.Add(value1);
             myList.Add(value2);
 
-            myList.Remove(value1);
-            actual = myList[1];
+            myList.Remove(value);
+            actual = myList[0];
 
             // ASSERT
 
@@ -92,10 +92,14 @@ namespace CustomList_Tests
             int value2 = 9;
             int value3 = 11;
 
-            int expected = 11; ;
+            int expected = 9; 
             int actual;
 
             // ACT
+            myList.Add(value);
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
 
             myList.Remove(value2);
             actual = myList[2];
@@ -112,26 +116,30 @@ namespace CustomList_Tests
             CustomList<int> myList = new CustomList<int>();
             int capacity = 8;
             int expected = 8;
-            int actual = capacity;
+            int actual;
 
             // ACT
-            myList.Add(1);
-            myList.Add(2);
-            myList.Add(3);
-            myList.Add(4);
-            myList.Add(5);
+            int value = 5;
+            int value1 = 7;
+            int value2 = 9;
+            int value3 = 11;
+            int value4 = 13;
 
-            myList.Remove(1);
-            myList.Remove(2);
-            myList.Remove(3);
-            myList.Remove(4);
-            myList.Remove(5);
+            myList.Remove(value);
+            myList.Remove(value1);
+            myList.Remove(value2);
+            myList.Remove(value3);
+            myList.Remove(value4);
+
+            actual = capacity;
 
 
 
             // ASSERT
 
             Assert.AreEqual(expected, actual);
+            
         }
+        
     }
 }

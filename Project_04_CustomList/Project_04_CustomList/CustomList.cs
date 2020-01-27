@@ -66,22 +66,33 @@ namespace Project_04_CustomList
             count++;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         public bool Remove(T item)
         {
-            for (int i = 0; i < count; i++)
+            bool isFound = false;
+            T[] temp = new T[Capacity];
+            for (int i = 0, j = 1; i < count; i++, j++)
             {
                 if (item.Equals(items[i]))
                 {
+                    isFound = true;
                     count--;
+                }
+
+
+                if(isFound == true)
+                {
+                    temp[i] = items[j];
                 }
                 else
                 {
-                    T[] temp = new T[Count];                                            //create new T Array and set equal to new count 
+                    temp[i] = items[i];
                 }
             }
-            
-
+            items = temp;
             return true;
+            
         }
        
 
