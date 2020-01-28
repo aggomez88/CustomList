@@ -52,6 +52,7 @@
     <Compile Include="TestLists_Add.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestList_Remove.cs" />
+    <Compile Include="TestLists_Zip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

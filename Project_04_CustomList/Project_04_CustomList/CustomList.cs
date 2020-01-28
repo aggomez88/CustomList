@@ -92,13 +92,22 @@ namespace Project_04_CustomList
             }
             items = temp;
             return true;
-            
-        }
-       
+            //if (index < 0 && index >= Capacity)
+            //        {
+            //            return items[index];
+            //        }
 
-        //if (index < 0 && index >= Capacity)
-        //        {
-        //            return items[index];
-        //        }
+        }
+        public void Zip()
+        {
+            CustomList<int> mergeList = new CustomList<int>();
+
+            int evenItems;
+            int oddItems;
+        }
+        
+
+
+
     }
 }
