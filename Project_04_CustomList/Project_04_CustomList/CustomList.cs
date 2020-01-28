@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Project_04_CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> 
     {
         // ------------------------------------------------------------------------------------VARIABLES (HAS A...)----------------------------------------------------------------------
 
@@ -98,16 +100,36 @@ namespace Project_04_CustomList
             //        }
 
         }
-        public void Zip()
+        public CustomList<T> Zip(CustomList<T> odd, CustomList<T> even)
         {
-            CustomList<int> mergeList = new CustomList<int>();
+            CustomList<T> finalList = new CustomList<T>();
 
-            int evenItems;
-            int oddItems;
+            int index = 0;
+
+            for (int i = 0; i < odd.count + even.count; i++)
+            {
+                finalList.Add(odd[index]);
+                finalList.Add(even[index]);
+                index++;
+            }
+            return finalList;
+
+
+            //if (even.count != odd.count)
+            //{
+            //    finalList[index++] = even;
+            //    finalList[index++] = odd;
+            //}
+            //else
+            //{
+            //    return finalList;
+            //}
         }
+        public void ToString()
+        {
+
+        }
+
         
-
-
-
     }
 }
