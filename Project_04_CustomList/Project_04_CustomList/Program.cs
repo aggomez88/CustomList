@@ -12,11 +12,11 @@ namespace Project_04_CustomList
         {
             CustomList<int> myList = new CustomList<int>();
 
-            myList.Add(2);
-            myList.Add(4);
-            myList.Add(6);
-            myList.Add(8);
-            myList.Remove(4);
+            myList.ToString(2);
+            myList.ToString(4);
+            myList.ToString(6);
+            myList.ToString(8);
+            myList.ToString(4);
 
             //for(int i = 0; i < myList.Count; i++)
             //{

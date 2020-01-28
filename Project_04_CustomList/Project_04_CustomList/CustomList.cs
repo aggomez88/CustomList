@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project_04_CustomList
 {
-    public class CustomList<T> 
+    public class CustomList<T> : IEnumerable
     {
         // ------------------------------------------------------------------------------------VARIABLES (HAS A...)----------------------------------------------------------------------
 
@@ -16,6 +17,9 @@ namespace Project_04_CustomList
         int index;
 
         public int Count { get { return count; } }
+
+        public string String { get; set; }
+        public int Number { get; set; }
 
         private int count;
         public int Capacity;
@@ -32,7 +36,6 @@ namespace Project_04_CustomList
                     //out of range IF its within range, else throw exception
                     return items[index];
                 }
-                
             }
             set
             {
@@ -82,7 +85,6 @@ namespace Project_04_CustomList
                     count--;
                 }
 
-
                 if(isFound == true)
                 {
                     temp[i] = items[j];
@@ -125,11 +127,50 @@ namespace Project_04_CustomList
             //    return finalList;
             //}
         }
-        public void ToString()
+        public override string ToString()
         {
+            StringBuilder sb = new StringBuilder();
 
+            return base.ToString();
         }
 
-        
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return items[i];
+            }
+            yield return "DONE!";
+        }
+
+        public static CustomList<T> operator+ (CustomList<T> firstList, CustomList<T> secondList)
+        {
+            CustomList<T> finalList = new CustomList<T>();
+            for (int i = 0; i < firstList.Count; i++)
+            {
+                finalList.Add(firstList[i]);
+            }
+            for (int i = 0; i < secondList.Count; i++)
+            {
+                finalList.Add(secondList[i]);
+            }
+            return finalList;
+        }
+    public static CustomList<T> operator-(CustomList<T> firstList, CustomList<T> secondList)
+        {
+            CustomList<T> finalList = new CustomList<T>();
+            for (int i = 0; i < firstList.Count; i++)
+            {
+                finalList.Remove(firstList[i]);
+            }
+            for (int i = 0; i < secondList.Count; i++)
+            {
+                finalList.Remove(secondList[i]);
+            }
+            return finalList;
+        }
+
+
+
     }
 }

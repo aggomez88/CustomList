@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="TestLists_Add.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestLists_OverLoad_Minus.cs" />
+    <Compile Include="TestLists_OverLoad_Plus.cs" />
+    <Compile Include="TestLists_ToString.cs" />
     <Compile Include="TestList_Remove.cs" />
     <Compile Include="TestLists_Zip.cs" />
   </ItemGroup>
